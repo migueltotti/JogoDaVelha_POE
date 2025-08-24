@@ -42,12 +42,14 @@
             label2 = new Label();
             labelX = new Label();
             labelO = new Label();
+            label3 = new Label();
+            label4 = new Label();
             SuspendLayout();
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            button1.Location = new Point(12, 49);
+            button1.Location = new Point(12, 87);
             button1.Name = "button1";
             button1.Size = new Size(120, 120);
             button1.TabIndex = 0;
@@ -57,7 +59,7 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            button2.Location = new Point(138, 49);
+            button2.Location = new Point(138, 87);
             button2.Name = "button2";
             button2.Size = new Size(120, 120);
             button2.TabIndex = 1;
@@ -67,7 +69,7 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            button3.Location = new Point(264, 49);
+            button3.Location = new Point(264, 87);
             button3.Name = "button3";
             button3.Size = new Size(120, 120);
             button3.TabIndex = 2;
@@ -77,7 +79,7 @@
             // button4
             // 
             button4.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            button4.Location = new Point(12, 175);
+            button4.Location = new Point(12, 213);
             button4.Name = "button4";
             button4.Size = new Size(120, 120);
             button4.TabIndex = 3;
@@ -87,7 +89,7 @@
             // button5
             // 
             button5.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            button5.Location = new Point(138, 175);
+            button5.Location = new Point(138, 213);
             button5.Name = "button5";
             button5.Size = new Size(120, 120);
             button5.TabIndex = 4;
@@ -97,7 +99,7 @@
             // button6
             // 
             button6.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            button6.Location = new Point(264, 175);
+            button6.Location = new Point(264, 213);
             button6.Name = "button6";
             button6.Size = new Size(120, 120);
             button6.TabIndex = 5;
@@ -107,7 +109,7 @@
             // button7
             // 
             button7.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            button7.Location = new Point(12, 301);
+            button7.Location = new Point(12, 339);
             button7.Name = "button7";
             button7.Size = new Size(120, 120);
             button7.TabIndex = 6;
@@ -117,7 +119,7 @@
             // button8
             // 
             button8.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            button8.Location = new Point(138, 301);
+            button8.Location = new Point(138, 339);
             button8.Name = "button8";
             button8.Size = new Size(120, 120);
             button8.TabIndex = 7;
@@ -127,7 +129,7 @@
             // button9
             // 
             button9.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            button9.Location = new Point(264, 301);
+            button9.Location = new Point(264, 339);
             button9.Name = "button9";
             button9.Size = new Size(120, 120);
             button9.TabIndex = 8;
@@ -138,7 +140,7 @@
             // 
             button10.BackColor = Color.MediumSlateBlue;
             button10.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            button10.Location = new Point(12, 436);
+            button10.Location = new Point(12, 474);
             button10.Name = "button10";
             button10.Size = new Size(372, 74);
             button10.TabIndex = 9;
@@ -149,7 +151,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(16, 516);
+            label1.Location = new Point(16, 554);
             label1.Name = "label1";
             label1.Size = new Size(150, 20);
             label1.TabIndex = 10;
@@ -184,12 +186,33 @@
             labelO.TabIndex = 13;
             labelO.Text = "O = 0";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.Location = new Point(16, 46);
+            label3.Name = "label3";
+            label3.Size = new Size(359, 20);
+            label3.TabIndex = 14;
+            label3.Text = "Use o mouse ou o teclado numérico para selecionar\r\n";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(219, 554);
+            label4.Name = "label4";
+            label4.Size = new Size(165, 20);
+            label4.TabIndex = 15;
+            label4.Text = "Miguel Totti de Oliveira";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(394, 544);
+            ClientSize = new Size(394, 583);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(labelO);
             Controls.Add(labelX);
             Controls.Add(label2);
@@ -204,8 +227,8 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "POE - Jogo da Velha";
@@ -230,5 +253,7 @@
         private Label label2;
         private Label labelX;
         private Label labelO;
+        private Label label3;
+        private Label label4;
     }
 }

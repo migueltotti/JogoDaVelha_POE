@@ -14,3 +14,4 @@ C:\Users\migue\OneDrive\Documentos\Faculdade\poe\POE\Projeto1_JogoVelha\obj\Debu
 C:\Users\migue\OneDrive\Documentos\Faculdade\poe\POE\Projeto1_JogoVelha\obj\Debug\net8.0-windows\Projeto1_JogoVelha.pdb
 C:\Users\migue\OneDrive\Documentos\Faculdade\poe\POE\Projeto1_JogoVelha\obj\Debug\net8.0-windows\Projeto1_JogoVelha.genruntimeconfig.cache
 C:\Users\migue\OneDrive\Documentos\Faculdade\poe\POE\Projeto1_JogoVelha\obj\Debug\net8.0-windows\ref\Projeto1_JogoVelha.dll
+C:\Users\migue\OneDrive\Documentos\Faculdade\poe\POE\Projeto1_JogoVelha\obj\Debug\net8.0-windows\Projeto1_JogoVelha.sourcelink.json

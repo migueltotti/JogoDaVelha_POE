@@ -12,22 +12,12 @@ namespace Projeto1_JogoVelha
         private string winner = "";
         private int contX = 0;
         private int contO = 0;
-        private readonly List<Keys> numpadKeyCodes = new List<Keys>()
-        {
-            Keys.NumPad1,
-            Keys.NumPad2,
-            Keys.NumPad3,
-            Keys.NumPad4,
-            Keys.NumPad5,
-            Keys.NumPad6,
-            Keys.NumPad7,
-            Keys.NumPad8,
-            Keys.NumPad9
-        };
         private readonly Dictionary<Keys, Button> buttons = new Dictionary<Keys, Button>();
 
         public Form1()
         {
+            this.KeyPreview = true;
+
             InitializeComponent();
 
             player = random.Next(0, 2) == 1 ? "X" : "O";
@@ -166,17 +156,13 @@ namespace Projeto1_JogoVelha
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            Button btn;
+            Button? btn;
 
-            if (numpadKeyCodes.Contains(e.KeyCode))
+            if (buttons.TryGetValue(e.KeyCode, out btn)
+                && btn != null && btn.Text == "")
             {
+                SetButton(btn);
 
-                buttons.TryGetValue(e.KeyCode, out btn);
-
-                if (btn != null && btn.Text == "")
-                {
-                    SetButton(btn);
-                }
             }
         }
 
@@ -188,5 +174,6 @@ namespace Projeto1_JogoVelha
             CheckWinner();
             NextPlayer();
         }
+
     }
 }
