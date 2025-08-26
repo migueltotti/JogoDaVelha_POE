@@ -5,14 +5,20 @@ namespace Projeto1_JogoVelha
     public partial class Form1 : Form
     {
         private static Random random = new Random();
+        private static Random computerPlayerRandom = new Random();
+        private PlayerType playerType;
+        private int computerChoice; 
         private string player;
         private Color playerColor;
         private int counter = 0;
+        private bool isMatchStarted = false;
         private bool matchEnded = false;
         private string winner = "";
         private int contX = 0;
         private int contO = 0;
+
         private readonly Dictionary<Keys, Button> buttons = new Dictionary<Keys, Button>();
+        private readonly Button[] buttonsList = new Button[9];
 
         public Form1()
         {
@@ -24,6 +30,21 @@ namespace Projeto1_JogoVelha
             playerColor = player == "X" ? Color.Red : Color.Blue;
 
             label2.Text = $"Jogador da Vez: {player}";
+
+            // Start game with Human oponent
+            playerType = PlayerType.Human;
+            button11.BackColor = Color.DodgerBlue;
+            button12.BackColor = Color.White;
+
+            buttonsList[0] = button1;
+            buttonsList[1] = button2;
+            buttonsList[2] = button3;
+            buttonsList[3] = button4;
+            buttonsList[4] = button5;
+            buttonsList[5] = button6;
+            buttonsList[6] = button7;
+            buttonsList[7] = button8;
+            buttonsList[8] = button9;
 
             buttons.Add(Keys.NumPad7, button1);
             buttons.Add(Keys.NumPad8, button2);
@@ -42,6 +63,23 @@ namespace Projeto1_JogoVelha
             if (btn != null && btn.Text == "")
             {
                 SetButton(btn);
+
+                if (playerType.Equals(PlayerType.Computer))
+                {
+                    do
+                    {
+                        computerChoice = computerPlayerRandom.Next(0, 9);
+
+                        btn = buttonsList[computerChoice];
+
+                    } while (btn.Text != "");
+
+
+                    if (isMatchStarted)
+                    {
+                        SetButton(btn);
+                    }
+                }
             }
         }
 
@@ -141,6 +179,7 @@ namespace Projeto1_JogoVelha
         {
             counter = 0;
             matchEnded = false;
+            isMatchStarted = false;
             winner = "";
 
             button1.Text = "";
@@ -162,7 +201,6 @@ namespace Projeto1_JogoVelha
                 && btn != null && btn.Text == "")
             {
                 SetButton(btn);
-
             }
         }
 
@@ -171,9 +209,39 @@ namespace Projeto1_JogoVelha
             btn.Text = player;
             btn.ForeColor = playerColor;
             counter++;
+            isMatchStarted = true;
             CheckWinner();
             NextPlayer();
         }
 
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (isMatchStarted)
+            {
+                MessageBox.Show("Você deve esperar a partida acabar para selecionar tipo de oponente!");
+                return;
+            }
+
+            playerType = playerType.Equals(PlayerType.Human) ?
+                PlayerType.Computer : PlayerType.Human;
+
+            button11.BackColor = Color.DodgerBlue;
+            button12.BackColor = Color.White;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if (isMatchStarted)
+            {
+                MessageBox.Show("Você deve esperar a partida acabar para selecionar tipo de oponente!");
+                return;
+            }
+          
+            playerType = playerType.Equals(PlayerType.Computer) ?
+                PlayerType.Human : PlayerType.Computer;
+
+            button11.BackColor = Color.White;
+            button12.BackColor = Color.DodgerBlue;
+        }
     }
 }
